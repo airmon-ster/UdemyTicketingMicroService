@@ -13,7 +13,7 @@ router.post('/api/users/signup', [
         .trim()
         .isLength({ min: 4, max: 20 })
         .withMessage('Invalid password length')
-], (req: Request, res: Response) => {
+], async (req: Request, res: Response) => {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
